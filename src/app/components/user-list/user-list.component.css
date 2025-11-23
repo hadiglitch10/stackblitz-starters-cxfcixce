@@ -1,0 +1,102 @@
+.user-list-container {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 35px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-list-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 1.8rem;
+  text-align: center;
+  background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.no-users {
+  color: #888;
+  font-style: italic;
+  text-align: center;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 2px dashed #ddd;
+}
+
+.user-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-item {
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  font-size: 1.1rem;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.user-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.user-item:hover {
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+  transform: translateX(5px);
+  border-color: #6c5ce7;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.user-item:hover::before {
+  transform: scaleY(1);
+}
+
+.user-item:active {
+  transform: translateX(3px) scale(0.98);
+}
+
+/* Highlight usernames with short passwords in red */
+.short-password {
+  color: #e74c3c;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fee 0%, #fdd 100%);
+  border-color: #e74c3c;
+}
+
+.short-password::before {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.short-password:hover {
+  background: linear-gradient(135deg, #fdd 0%, #fcc 100%);
+  border-color: #c0392b;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}

@@ -1,0 +1,17 @@
+<div class="user-list-container">
+  <h2>Registered Users</h2>
+  
+  <div *ngIf="users.length === 0" class="no-users">
+    No users registered yet.
+  </div>
+  
+  <ul class="user-list" *ngIf="users.length > 0">
+    <li 
+      *ngFor="let user of users" 
+      [class.short-password]="isPasswordShort(user.password)"
+      (click)="deleteUser(user.username)"
+      class="user-item">
+      {{ user.username }}
+    </li>
+  </ul>
+</div>
